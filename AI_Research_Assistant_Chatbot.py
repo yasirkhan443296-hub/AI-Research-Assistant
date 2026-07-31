@@ -207,8 +207,4 @@ with st.sidebar:
   #docs_documents=loader_docs(file_path)
 
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%writefile app.py
 
-from google.colab import files
-files.download("app.py")
