@@ -39,7 +39,7 @@ def loader_text(file_path):
   return documents
 def save_upload_file(upload_file):
   suffix=os.path.splitext(upload_file.name)[1]
-  with tempfile.namedTemporaryFile(delete=False,suffix=suffix) as temp_file:
+  with tempfile.NamedTemporaryFile(delete=False,suffix=suffix) as temp_file:
     temp_file.write(upload_file.getvalue())
     return temp_file.name
 def split_documents(documents):
