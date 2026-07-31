@@ -110,7 +110,7 @@ def create_rag_chain(retriever,chain):
   return rag_chain
 def main():
   load_dotenv()
-  st.set_page_config(page_title="Ai resarch assistant",Pageicon=":book:")
+  st.set_page_config(page_title="Ai resarch assistant",Page_icon=":book:")
 
   st.header("Ai resarch assistant")
   col1, col2 = st.columns([1, 1.3])
