@@ -166,7 +166,7 @@ with col2:
 st.info("💡 Tip: Upload multiple research papers for better answers.")
 if "messages" not in st.session_state:
     st.session_state.messages=[]
-  st.text_input("ask the question from pdf or websearch what ever you want research")
+    st.text_input("ask the question from pdf or websearch what ever you want research")
 with st.sidebar:
   st.subheader("pdf or websearch")
   uploaded_pdf=st.file_uploader("upload your resarch_paper or docuement and click on the process button"
