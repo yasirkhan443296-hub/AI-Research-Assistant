@@ -113,7 +113,58 @@ def main():
   st.set_page_config(page_title="Ai resarch assistant",PageIcon=":book:")
 
   st.header("Ai resarch assistant")
-  if "messages" not in st.session_state:
+  col1, col2 = st.columns([1, 1.3])
+
+with col1:
+    st.subheader("📂 Upload Research Documents")
+    st.write("""
+    Upload one or more documents and click **Process Documents**.
+
+    Supported formats:
+    - 📄 PDF
+    - 📊 CSV
+    - 📝 DOCX
+
+    After processing, ask questions in the chat.
+    """)
+
+with col2:
+    st.title("🤖 AI Research Assistant")
+
+    st.markdown("""
+### Features
+
+✅ Multi PDF Support
+
+✅ CSV Support
+
+✅ DOCX Support
+
+✅ AI Question Answering
+
+✅ Source Document Citation
+
+✅ FAISS Vector Database
+
+✅ HuggingFace Embeddings
+
+✅ Groq Llama 3.3 70B
+
+---
+
+**How it Works**
+
+1. Upload Documents
+2. Process Documents
+3. Ask Questions
+4. Get AI Generated Answers
+5. View Source Documents
+
+---
+""")
+
+st.info("💡 Tip: Upload multiple research papers for better answers.")
+if "messages" not in st.session_state:
     st.session_state.messages=[]
   st.text_input("ask the question from pdf or websearch what ever you want research")
 with st.sidebar:
