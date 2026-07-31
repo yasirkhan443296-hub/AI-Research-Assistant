@@ -63,7 +63,7 @@ def create_vectorstore(chunks,embeddings):
     return vectore_store
 @st.cache_resource
 def create_retriever(vector_store):
-  retriever=vector_store.as_retrievers(
+  retriever=vector_store.as_retriever(
       search_type="similarity",
       search_kwargs={"k":3}
   )
