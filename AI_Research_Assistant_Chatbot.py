@@ -115,7 +115,7 @@ def main():
   st.header("Ai resarch assistant")
   col1, col2 = st.columns([1, 1.3])
 
-with col1:
+  with col1:
     st.subheader("📂 Upload Research Documents")
     st.write("""
     Upload one or more documents and click **Process Documents**.
@@ -128,7 +128,7 @@ with col1:
     After processing, ask questions in the chat.
     """)
 
-with col2:
+  with col2:
     st.title("🤖 AI Research Assistant")
 
     st.markdown("""
@@ -257,5 +257,6 @@ with st.sidebar:
   #web_documents=loader_web(file_path)
   #docs_documents=loader_docs(file_path)
 
-
+if __name__ == "__main__":
+    main()
 
