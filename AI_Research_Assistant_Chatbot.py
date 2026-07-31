@@ -19,7 +19,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import faiss
 
-!pip install langchain langchain-classic langchain-huggingface langchain-core langchain-community langchain-text-splitters langchain-groq python-dotenv streamlit
 
 from pydantic import WebsocketUrl
 def loader_pdf(file_path):
@@ -207,7 +206,6 @@ with st.sidebar:
   #web_documents=loader_web(file_path)
   #docs_documents=loader_docs(file_path)
 
-!pip install -U langchain-classic
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
