@@ -185,23 +185,24 @@ with st.sidebar:
     st.rerun()
   st.spinner("processing")
   if process:
-    all_documents=[]
-    if uploaded_pdf:
-      for pdf in uploaded_pdf:
-        temp_path=save_upload_file(pdf)
-        docs=loader_pdf(temp_path)
-        all_documents.extend(docs)
-    if uploaded_csv:
-      temp_path=save_upload_file(upload_csv)
-      docs=loader_csv(temp_path)
-      all_documents.extend(docs)
-    if uploaded_docx:
-      temp_path=save_upload_file(uploaded_docx)
-      docs=loader_text(temp_path)
-      all_documents.extend(docs)
+      with st.spinner("processing the document"):
+        all_documents=[]
+        if uploaded_pdf:
+          for pdf in uploaded_pdf:
+            temp_path=save_upload_file(pdf)
+            docs=loader_pdf(temp_path)
+            all_documents.extend(docs)
+        if uploaded_csv:
+           temp_path=save_upload_file(upload_csv)
+           docs=loader_csv(temp_path)
+           all_documents.extend(docs)
+        if uploaded_docx:
+           temp_path=save_upload_file(uploaded_docx)
+           docs=loader_text(temp_path)
+           all_documents.extend(docs)
     #if website_url:
      # docs=loader_web(website_url)
-      all_documents.extend(docs)
+      #all_documents.extend(docs)
       chunks=split_documents(all_documents)
       embeddings=create_embeddings()
       vectore_store=faiss.from_documents(
