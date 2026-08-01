@@ -199,8 +199,8 @@ with st.sidebar:
       temp_path=save_upload_file(uploaded_docx)
       docs=loader_text(temp_path)
       all_documents.extend(docs)
-    if website_url:
-      docs=loader_web(website_url)
+    #if website_url:
+     # docs=loader_web(website_url)
       all_documents.extend(docs)
       chunks=split_documents(all_documents)
       embeddings=create_embeddings()
