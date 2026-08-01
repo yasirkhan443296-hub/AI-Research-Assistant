@@ -17,7 +17,7 @@ from langchain_classic.chains.combine_documents import create_stuff_documents_ch
 from langchain_classic.chains import create_retrieval_chain
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.vectorstores import faiss
+from langchain_community.vectorstores import FAISS
 import tempfile
 
 
@@ -205,7 +205,7 @@ with st.sidebar:
       #all_documents.extend(docs)
       chunks=split_documents(all_documents)
       embeddings=create_embeddings()
-      vectore_store=faiss.from_documents(
+      vectore_store=FAISS.from_documents(
           chunks,
           embeddings
       )
