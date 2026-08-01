@@ -58,10 +58,10 @@ def create_embeddings():
   return embedding
 @st.cache_resource
 def create_vectorstore(chunks,embeddings):
-    vectore_store=faiss.from_documents(
+    vector_store=FAISS.from_documents(
       documents=chunks,embedding=embeddings
     )
-    return vectore_store
+    return vector_store
 @st.cache_resource
 def create_retriever(vector_store):
   retriever=vector_store.as_retriever(
