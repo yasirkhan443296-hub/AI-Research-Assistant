@@ -205,7 +205,7 @@ with st.sidebar:
       #all_documents.extend(docs)
       chunks=split_documents(all_documents)
       embeddings=create_embeddings()
-      vectore_store=FAISS.from_documents(
+      vector_store=FAISS.from_documents(
           chunks,
           embeddings
       )
